@@ -7,7 +7,6 @@ server.on('request', function(req, res){
 var urlParsed = url.parse(req.url, true);
 console.log(urlParsed);
 console.log(req.headers);
-68
 if(urlParsed.pathname == '/img'){
  fs.readFile("img.jpg", function(err, data){
  if(err){
@@ -34,8 +33,7 @@ fs.readFile("content.txt", {encoding: 'utf-8'}, function(err, data){
  res.setHeader("Access-Control-Allow-Origin",
 "http://localhost:3000");
  res.setHeader("Access-Control-Allow-Credentials", "true");
- res.setHeader("Access-Control-Allow-Headers","Origin,
-Content-Type, X-Auth-Token, Authorization");
+ res.setHeader("Access-Control-Allow-Headers","Origin, Content-Type, X-Auth-Token, Authorization");
  res.end(data);
  }
  });
